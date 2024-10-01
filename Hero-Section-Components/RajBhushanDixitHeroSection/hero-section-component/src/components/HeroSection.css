@@ -1,0 +1,151 @@
+/* HeroSection.css */
+.hero-section {
+    position: relative;
+    height: 90vh; /* Fullscreen look */
+    width: 100%; /* Full width */
+    background-size: cover;
+    background-position: center;
+    color: #333; /* Dark gray text for better readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/beach-1867285_960_720.jpg'); /* Example CDN image */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px; /* Limit the maximum width */
+    width: 90%; /* Responsive width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Flex-wrap for small screens */
+    padding: 20px;
+}
+
+/* Text section styling */
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Slightly larger font size */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Improve readability */
+    color: #fff; /* White text for contrast */
+    text-transform: uppercase; /* Bold, uppercase styling */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* Increase subtitle size */
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #e0e0e0; /* Light gray subtitle for a softer look */
+}
+
+/* Button Styling */
+.hero-button {
+    padding: 0.85rem 2rem; /* Larger padding for prominence */
+    font-size: 1.2rem; /* Larger font size */
+    color: #fff;
+    background-color: #ff6600; /* Stand-out button color (e.g., orange) */
+    border: none;
+    border-radius: 50px; /* Rounded button */
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3); /* Add shadow for depth */
+}
+
+.hero-button:hover {
+    background-color: #e65c00; /* Darker orange on hover */
+    transform: translateY(-5px); /* Lift effect */
+}
+
+.hero-button:active {
+    transform: translateY(2px); /* Subtle press effect */
+}
+
+/* Image section styling */
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    border-radius: 10px; /* Rounded corners */
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 20px; /* Add margin to separate the image */
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
